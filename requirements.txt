@@ -1,0 +1,6 @@
+customtkinter
+qrcode
+pillow
+
+# Optional (only needed to generate the common-password hash table .pkl)
+pandas
