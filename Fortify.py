@@ -2,6 +2,7 @@ import customtkinter as ctk
 from pathlib import Path
 import subprocess
 import sys
+from database.integrity import verify_integrity
 
 from password import open_password_window
 
@@ -40,6 +41,16 @@ app = ctk.CTk()
 app.geometry("400x300")
 app.title("Fortify")
 
+inti = verify_integrity()
+label1 = ctk.CTkLabel(app, text="")
+label1.pack()
+if(inti):
+    
+    label1.configure(text="Database Integrity Verified")
+else:
+    label1.configure(text="⚠️TAMPER WARNING: Database modified!⚠️")
+    
+    
 
 password_button = ctk.CTkButton(
     app,

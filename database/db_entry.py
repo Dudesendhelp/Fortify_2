@@ -12,7 +12,7 @@ def _get_db_path() -> Path:
     """
     if getattr(sys, "frozen", False):
         # Running from a bundled EXE
-        base_dir = Path(sys.executable).parent / "database"
+        base_dir = Path(sys.executable).parent / "App_data"
     else:
         # Running from source
         base_dir = Path(__file__).parent
